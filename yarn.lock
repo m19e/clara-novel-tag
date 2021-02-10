@@ -1843,6 +1843,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-tagsinput@^3.19.7":
+  version "3.19.7"
+  resolved "https://registry.yarnpkg.com/@types/react-tagsinput/-/react-tagsinput-3.19.7.tgz#f0ebba4416e720c08ed11df75e03a97b89fe8288"
+  integrity sha512-yj/3iFBLoan/0vzXMxC9zGhO1uJ89qjQldekf0o3fX4mYdaAPW/VbP921fsyYt6PdHmJ9UMo+kERSMzUAml1xQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*":
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.1.tgz#eb1f1407dea8da3bc741879c1192aa703ab9975b"
@@ -9262,6 +9269,11 @@ react-tag-input@^6.5.2:
     classnames "~2.2.6"
     lodash "~4.17.12"
     prop-types "~15.7.0"
+
+react-tagsinput@^3.19.0:
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/react-tagsinput/-/react-tagsinput-3.19.0.tgz#6e3b45595f2d295d4657bf194491988f948caabf"
+  integrity sha512-ni+/qnZrYrvLg83LtTFHErKy1KQHL0fi0Y6C5jgC1dNUePE9cS/OlQ4XH6JRSjv9GGoeVE0R/ujSBaS1uzCRYQ==
 
 react@^17.0.1:
   version "17.0.1"
