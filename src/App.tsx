@@ -1,5 +1,6 @@
 import React, { useState, createRef } from "react";
 import Tags, { Tag } from "react-tag-autocomplete";
+import TagsInput from "react-tagsinput";
 
 const TagAutocomplete = () => {
     const [tags, setTags] = useState([
@@ -27,11 +28,28 @@ const TagAutocomplete = () => {
     return <Tags ref={tagsRef} tags={tags} suggestions={suggests} onDelete={handleDeleteTag} onAddition={handleAddTag} />;
 };
 
+const LocalTagsInput = () => {
+    const [tags, setTags] = useState([]);
+
+    const handleChange = (tags: never[]) => {
+        setTags(tags);
+    };
+
+    return (
+        <div className="flex justify-center items-center w-1/2">
+            <TagsInput value={tags} onChange={handleChange} />
+        </div>
+    );
+};
+
 const App = () => {
     return (
         <div className="min-h-screen flex flex-col">
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center mt-8">
                 <TagAutocomplete />
+            </div>
+            <div className="flex justify-center items-center mt-8">
+                <LocalTagsInput />
             </div>
         </div>
     );
