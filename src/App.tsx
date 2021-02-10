@@ -37,7 +37,15 @@ const LocalTagsInput = () => {
 
     return (
         <div className="flex justify-center items-center w-1/2">
-            <TagsInput value={tags} onChange={handleChange} />
+            <TagsInput
+                value={tags}
+                onChange={handleChange}
+                inputProps={{
+                    className: "bg-transparent border-0 text-sm font-normal outline-none focus:outline-none w-24 mb-1.5 mt-0.5 p-1",
+                    placeholder: "タグを追加",
+                    style: { fontFamily: "sans-serif" },
+                }}
+            />
         </div>
     );
 };
