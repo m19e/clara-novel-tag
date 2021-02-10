@@ -29,9 +29,11 @@ const TagAutocomplete = () => {
 
 const App = () => {
     return (
-        <>
-            <TagAutocomplete />
-        </>
+        <div className="min-h-screen flex flex-col">
+            <div className="flex justify-center items-center">
+                <TagAutocomplete />
+            </div>
+        </div>
     );
 };
 
