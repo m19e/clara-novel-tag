@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 .react-tagsinput {
-    @apply bg-white;
-    @apply border;
-    @apply border-solid;
-    @apply border-gray-300;
+    @apply bg-gray-100;
+    @apply rounded;
     @apply overflow-hidden;
     @apply pl-1;
     @apply pt-1;
