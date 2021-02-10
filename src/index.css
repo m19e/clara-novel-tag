@@ -6,6 +6,7 @@
     @apply bg-gray-100;
     @apply rounded;
     @apply overflow-hidden;
+    @apply w-full;
     @apply pl-1;
     @apply pt-1;
 }
@@ -46,6 +47,6 @@
     margin-bottom: 6px;
     margin-top: 1px;
     outline: none;
-    padding: 5px;
     width: 80px;
+    padding: 5px;
 }
