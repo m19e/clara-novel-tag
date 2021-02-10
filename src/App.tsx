@@ -1,7 +1,7 @@
 import React, { useState, createRef } from "react";
 import Tags, { Tag } from "react-tag-autocomplete";
 
-function App() {
+const TagAutocomplete = () => {
     const [tags, setTags] = useState([
         { id: 1, name: "Apples" },
         { id: 2, name: "Pears" },
@@ -25,6 +25,14 @@ function App() {
     };
 
     return <Tags ref={tagsRef} tags={tags} suggestions={suggests} onDelete={handleDeleteTag} onAddition={handleAddTag} />;
-}
+};
+
+const App = () => {
+    return (
+        <>
+            <TagAutocomplete />
+        </>
+    );
+};
 
 export default App;
