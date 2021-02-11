@@ -1,4 +1,5 @@
 import React, { useState, createRef } from "react";
+import AutosizeInput from "react-input-autosize";
 import Tags, { Tag } from "react-tag-autocomplete";
 import TagsInput from "react-tagsinput";
 
@@ -28,6 +29,21 @@ const TagAutocomplete = () => {
     return <Tags ref={tagsRef} tags={tags} suggestions={suggests} onDelete={handleDeleteTag} onAddition={handleAddTag} />;
 };
 
+const autoSizingRenderInput = ({ addTag, ...props }: TagsInput.RenderInputProps<never>) => {
+    let { onChange, value, ...other } = props;
+    return (
+        <AutosizeInput
+            type="text"
+            {...other}
+            placeholder="タグを追加"
+            style={{ fontFamily: "sans-serif" }}
+            inputClassName="bg-transparent border-0 text-sm font-normal outline-none focus:outline"
+            onChange={onChange}
+            value={value}
+        />
+    );
+};
+
 const LocalTagsInput = () => {
     const [tags, setTags] = useState([]);
 
@@ -43,11 +59,7 @@ const LocalTagsInput = () => {
                 tagProps={{
                     className: "react-tagsinput-tag",
                 }}
-                inputProps={{
-                    className: "bg-transparent border-0 text-sm font-normal outline-none focus:outline-none w-24 mb-1.5 mt-0.5 p-1",
-                    placeholder: "タグを追加",
-                    style: { fontFamily: "sans-serif" },
-                }}
+                renderInput={autoSizingRenderInput}
             />
         </div>
     );
