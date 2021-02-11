@@ -60,6 +60,10 @@
 
 .react-tagsinput-tag a::before {
     content: " ×";
+    /* font-weight: bold; */
+    @apply font-black;
+    @apply cursor-pointer;
+    @apply text-gray-400;
 }
 
 .react-tagsinput-input {
