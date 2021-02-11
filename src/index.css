@@ -15,17 +15,42 @@
 }
 
 .react-tagsinput-tag {
-    background-color: #cde69c;
-    border-radius: 2px;
-    border: 1px solid #a5d24a;
-    color: #638421;
-    display: inline-block;
+    /* background-color: #cde69c; */
+    /* border-radius: 2px; */
+    /* border: 1px solid #a5d24a; */
+    /* color: #638421; */
+    /* display: inline-block; */
     font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    padding: 5px;
+    /* font-size: 13px; */
+    /* font-weight: 400; */
+    /* margin-bottom: 5px; */
+    /* margin-right: 5px; */
+    /* padding: 5px; */
+
+    @apply bg-white;
+    @apply rounded;
+    @apply inline-block;
+    @apply text-sm;
+    @apply font-normal;
+    @apply mb-1.5;
+    @apply mr-1.5;
+    @apply p-1;
+
+    /* display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    margin: 2px;
+    max-width: 100%;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.88);
+    line-height: 1;
+    overflow-wrap: break-word;
+    vertical-align: top;
+    cursor: pointer; */
 }
 
 .react-tagsinput-remove {

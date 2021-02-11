@@ -40,6 +40,9 @@ const LocalTagsInput = () => {
             <TagsInput
                 value={tags}
                 onChange={handleChange}
+                tagProps={{
+                    className: "react-tagsinput-tag",
+                }}
                 inputProps={{
                     className: "bg-transparent border-0 text-sm font-normal outline-none focus:outline-none w-24 mb-1.5 mt-0.5 p-1",
                     placeholder: "タグを追加",
