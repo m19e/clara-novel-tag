@@ -46,9 +46,15 @@ const autoSizingRenderInput = ({ addTag, ...props }: TagsInput.RenderInputProps<
 
 const LocalTagsInput = () => {
     const [tags, setTags] = useState([]);
+    const [tag, setTag] = useState("");
 
     const handleChange = (tags: never[]) => {
         setTags(tags);
+    };
+
+    const handleChangeInput = (t: string) => {
+        console.log(t);
+        setTag(t);
     };
 
     return (
@@ -56,6 +62,8 @@ const LocalTagsInput = () => {
             <TagsInput
                 value={tags}
                 onChange={handleChange}
+                inputValue={tag}
+                onChangeInput={handleChangeInput}
                 tagProps={{
                     className: "react-tagsinput-tag",
                 }}
