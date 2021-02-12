@@ -47,19 +47,26 @@ const autoSizingRenderInput = ({ addTag, ...props }: TagsInput.RenderInputProps<
 const LocalTagsInput = () => {
     const [tags, setTags] = useState([]);
     const [tag, setTag] = useState("");
+    const inputRef = createRef<TagsInput<never>>();
+    const reg = /[^_0-9a-zA-Z\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf]+/g;
 
     const handleChange = (tags: never[]) => {
-        setTags(tags);
+        const valid = tags.map((t: string) => t.replace(reg, "") as never).filter((t: string) => t !== "");
+        setTags(valid);
     };
 
     const handleChangeInput = (t: string) => {
-        console.log(t);
+        if (/[\s]/.test(t)) {
+            inputRef.current?.accept();
+            return;
+        }
         setTag(t);
     };
 
     return (
         <div className="flex justify-center items-center w-1/2">
             <TagsInput
+                ref={inputRef}
                 value={tags}
                 onChange={handleChange}
                 inputValue={tag}
