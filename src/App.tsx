@@ -1,7 +1,7 @@
 import React, { useState, createRef } from "react";
 import AutosizeInput from "react-input-autosize";
 import Tags, { Tag } from "react-tag-autocomplete";
-import TagsInput from "react-tagsinput";
+import TagsInput, { RenderLayout } from "react-tagsinput";
 
 const TagAutocomplete = () => {
     const [tags, setTags] = useState([
@@ -44,6 +44,15 @@ const autoSizingRenderInput = ({ addTag, ...props }: TagsInput.RenderInputProps<
     );
 };
 
+const LocalRenderLayout: RenderLayout = (tagComponents, inputComponent) => {
+    return (
+        <div>
+            {tagComponents}
+            {inputComponent}
+        </div>
+    );
+};
+
 const LocalTagsInput = () => {
     const [tags, setTags] = useState([]);
     const [tag, setTag] = useState("");
@@ -58,6 +67,10 @@ const LocalTagsInput = () => {
     const handleChangeInput = (t: string) => {
         if (/[\s]/.test(t)) {
             inputRef.current?.accept();
+            return;
+        }
+        if (Array.from(t).length > 31) {
+            setTag(Array.from(t).slice(0, 30).join(""));
             return;
         }
         setTag(t);
@@ -75,6 +88,7 @@ const LocalTagsInput = () => {
                     className: "react-tagsinput-tag",
                 }}
                 renderInput={autoSizingRenderInput}
+                renderLayout={LocalRenderLayout}
             />
         </div>
     );
