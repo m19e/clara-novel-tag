@@ -89,6 +89,7 @@ const LocalTagsInput = () => {
                 }}
                 renderInput={autoSizingRenderInput}
                 renderLayout={LocalRenderLayout}
+                onlyUnique={true}
             />
         </div>
     );
