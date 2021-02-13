@@ -69,7 +69,7 @@ const LocalTagsInput = () => {
             inputRef.current?.accept();
             return;
         }
-        if (Array.from(t).length > 31) {
+        if (Array.from(t).length >= 30) {
             setTag(Array.from(t).slice(0, 30).join(""));
             return;
         }
@@ -90,6 +90,7 @@ const LocalTagsInput = () => {
                 renderInput={autoSizingRenderInput}
                 renderLayout={LocalRenderLayout}
                 onlyUnique={true}
+                maxTags={10}
             />
         </div>
     );
