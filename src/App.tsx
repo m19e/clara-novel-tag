@@ -121,7 +121,7 @@ const LocalTagsInput = () => {
                 <span className="text-sm">よく使われているタグ</span>
                 <div className="mt-2 flex flex-wrap">
                     {suggests.map((s) => (
-                        <span className="mr-2 text-sm text-gray-500 hover:text-blue-400" onClick={() => handleClickSuggest(s)}>
+                        <span className="mr-2 text-sm text-gray-500 hover:text-blue-400 cursor-pointer" onClick={() => handleClickSuggest(s)}>
                             #{s}
                         </span>
                     ))}
@@ -144,9 +144,7 @@ const LocalTagsInput = () => {
 const App = () => {
     return (
         <div className="min-h-screen flex flex-col">
-            <div className="flex justify-center items-center mt-8">
-                <TagAutocomplete />
-            </div>
+            <div className="flex justify-center items-center mt-8">{/* <TagAutocomplete /> */}</div>
             <div className="flex justify-center items-center mt-8">
                 <LocalTagsInput />
             </div>
