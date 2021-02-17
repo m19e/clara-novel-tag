@@ -95,6 +95,11 @@ const LocalTagsInput = () => {
         inputRef.current?.addTag(suggest as never);
     };
 
+    const debugPrint = () => {
+        const joinedTags = "[" + tags.join(",") + "]";
+        alert(JSON.stringify(`r18: ${r18}, tags: ${joinedTags}`));
+    };
+
     return (
         <div className="flex flex-col justify-center items-center w-1/2">
             <div className="w-full flex justify-between text-sm">
@@ -136,6 +141,11 @@ const LocalTagsInput = () => {
                     <input type="radio" className="text-indigo-600" value="r18" checked={r18} onChange={() => setR18(true)} />
                     <span className="ml-1">R-18</span>
                 </label>
+            </div>
+            <div className="w-full mt-4 flex justify-end">
+                <span className="p-1 rounded bg-gray-200 text-sm cursor-pointer" style={{ fontFamily: "sans-serif" }} onClick={() => debugPrint()}>
+                    テスト
+                </span>
             </div>
         </div>
     );
