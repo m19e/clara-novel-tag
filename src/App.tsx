@@ -77,7 +77,13 @@ const LocalTagsInput = () => {
     };
 
     return (
-        <div className="flex justify-center items-center w-1/2">
+        <div className="flex flex-col justify-center items-center w-1/2">
+            <div className="w-full flex justify-between text-sm">
+                <span className="mx-2" style={{ fontFamily: "sans-serif" }}>
+                    タグ
+                </span>
+                <span className="mx-2">{tags.length}/10</span>
+            </div>
             <TagsInput
                 ref={inputRef}
                 value={tags}
