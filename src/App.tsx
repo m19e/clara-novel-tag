@@ -56,6 +56,7 @@ const LocalRenderLayout: RenderLayout = (tagComponents, inputComponent) => {
 const LocalTagsInput = () => {
     const [tags, setTags] = useState([]);
     const [tag, setTag] = useState("");
+    const [r18, setR18] = useState(false);
     const inputRef = createRef<TagsInput<never>>();
     const reg = /[^_0-9a-zA-Z\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf]+/g;
 
@@ -98,6 +99,16 @@ const LocalTagsInput = () => {
                 onlyUnique={true}
                 maxTags={10}
             />
+            <div className="w-full flex mt-4">
+                <label className="inline-flex items-center">
+                    <input type="radio" className="form-radio text-indigo-600" name="radio-colors" value="zen" checked={!r18} />
+                    <span className="ml-1">全年齢</span>
+                </label>
+                <label className="inline-flex items-center ml-2">
+                    <input type="radio" className="form-radio text-indigo-600" name="radio-colors" value="r18" checked={r18} />
+                    <span className="ml-1">R-18</span>
+                </label>
+            </div>
         </div>
     );
 };
