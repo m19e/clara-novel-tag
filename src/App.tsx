@@ -126,7 +126,7 @@ const LocalTagsInput = () => {
                     <input type="radio" className="form-radio text-indigo-600" value="zen" checked={!r18} onClick={() => setR18(false)} />
                     <span className="ml-1">全年齢</span>
                 </label>
-                <label className="inline-flex items-center ml-2">
+                <label className="inline-flex items-center ml-4">
                     <input type="radio" className="form-radio text-indigo-600" value="r18" checked={r18} onClick={() => setR18(true)} />
                     <span className="ml-1">R-18</span>
                 </label>
