@@ -56,6 +56,20 @@ const LocalRenderLayout: RenderLayout = (tagComponents, inputComponent) => {
 const LocalTagsInput = () => {
     const [tags, setTags] = useState([]);
     const [tag, setTag] = useState("");
+    const [suggests, setSuggests] = useState([
+        "アイドルマスターシャイニーカラーズ",
+        "放クラ",
+        "小宮果穂",
+        "園田智代子",
+        "西城樹里",
+        "杜野凛世",
+        "有栖川夏葉",
+        "ノクチル",
+        "浅倉透",
+        "樋口円香",
+        "福丸小糸",
+        "市川雛菜",
+    ]);
     const [r18, setR18] = useState(false);
     const inputRef = createRef<TagsInput<never>>();
     const reg = /[^_0-9a-zA-Z\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf]+/g;
@@ -99,13 +113,21 @@ const LocalTagsInput = () => {
                 onlyUnique={true}
                 maxTags={10}
             />
+            <div className="w-full mt-2 px-2 py-3 flex flex-col bg-gray-100 rounded" style={{ fontFamily: "sans-serif" }}>
+                <span className="text-sm">よく使われているタグ</span>
+                <div className="mt-2 flex flex-wrap">
+                    {suggests.map((s) => (
+                        <span className="mr-2 text-sm text-gray-500 hover:text-blue-400">#{s}</span>
+                    ))}
+                </div>
+            </div>
             <div className="w-full flex mt-4">
                 <label className="inline-flex items-center">
-                    <input type="radio" className="form-radio text-indigo-600 transition-all" value="zen" checked={!r18} onClick={() => setR18(false)} />
+                    <input type="radio" className="form-radio text-indigo-600" value="zen" checked={!r18} onClick={() => setR18(false)} />
                     <span className="ml-1">全年齢</span>
                 </label>
                 <label className="inline-flex items-center ml-2">
-                    <input type="radio" className="form-radio text-indigo-600 transition-all" value="r18" checked={r18} onClick={() => setR18(true)} />
+                    <input type="radio" className="form-radio text-indigo-600" value="r18" checked={r18} onClick={() => setR18(true)} />
                     <span className="ml-1">R-18</span>
                 </label>
             </div>
