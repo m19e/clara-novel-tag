@@ -92,7 +92,7 @@ const LocalTagsInput = () => {
     };
 
     const handleClickSuggest = (suggest: string) => {
-        console.log(suggest);
+        inputRef.current?.addTag(suggest as never);
     };
 
     return (
