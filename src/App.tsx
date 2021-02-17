@@ -101,11 +101,11 @@ const LocalTagsInput = () => {
             />
             <div className="w-full flex mt-4">
                 <label className="inline-flex items-center">
-                    <input type="radio" className="form-radio text-indigo-600" name="radio-colors" value="zen" checked={!r18} />
+                    <input type="radio" className="form-radio text-indigo-600 transition-all" value="zen" checked={!r18} onClick={() => setR18(false)} />
                     <span className="ml-1">全年齢</span>
                 </label>
                 <label className="inline-flex items-center ml-2">
-                    <input type="radio" className="form-radio text-indigo-600" name="radio-colors" value="r18" checked={r18} />
+                    <input type="radio" className="form-radio text-indigo-600 transition-all" value="r18" checked={r18} onClick={() => setR18(true)} />
                     <span className="ml-1">R-18</span>
                 </label>
             </div>
